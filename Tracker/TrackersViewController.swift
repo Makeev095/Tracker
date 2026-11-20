@@ -289,7 +289,10 @@ extension TrackersViewController: TrackerCellDelegate {
             completedTrackers = completedTrackers + [TrackerRecord(trackerId: tracker.id, date: currentDate)]
             completedTrackerIDs.insert(tracker.id)
         }
-        collectionView.reloadItems(at: [indexPath])
+        cell.updateCompletion(
+            completedDays: completedDays(for: tracker.id),
+            isCompleted: completedTrackerIDs.contains(tracker.id)
+        )
     }
 }
 

@@ -47,6 +47,7 @@ final class ScheduleViewController: UIViewController {
         view.backgroundColor = UIColor(named: "ypWhite") ?? .systemBackground
         navigationItem.title = "Расписание"
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.hidesBackButton = true
 
         tableView.dataSource = self
         tableView.delegate = self

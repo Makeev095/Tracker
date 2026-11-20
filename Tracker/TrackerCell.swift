@@ -99,8 +99,11 @@ final class TrackerCell: UICollectionViewCell {
         completeButton.backgroundColor = tracker.color
         emojiLabel.text = tracker.emoji
         nameLabel.text = tracker.name
-        daysLabel.text = daysString(for: completedDays)
+        updateCompletion(completedDays: completedDays, isCompleted: isCompleted)
+    }
 
+    func updateCompletion(completedDays: Int, isCompleted: Bool) {
+        daysLabel.text = daysString(for: completedDays)
         let imageName = isCompleted ? "checkmark" : "plus"
         completeButton.setImage(UIImage(systemName: imageName), for: .normal)
         completeButton.alpha = isCompleted ? 0.3 : 1
